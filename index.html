@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI World - Die Zukunft der Künstlichen Intelligenz</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-robot"></i>
+                <span>AI World</span>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#comparison" class="nav-link">KI-Vergleich</a></li>
+                <li><a href="#applications" class="nav-link">Anwendungen</a></li>
+                <li><a href="#news" class="nav-link">News</a></li>
+                <li><a href="#trends" class="nav-link">Trends</a></li>
+                <li><a href="#about" class="nav-link">Über uns</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Suchen..." id="searchInput">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-animation">
+            <div class="ai-brain">
+                <div class="neuron"></div>
+                <div class="neuron"></div>
+                <div class="neuron"></div>
+            </div>
+            <p>AI World wird geladen...</p>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-background">
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title animate-fade-in">
+                    Willkommen in der <span class="gradient-text">AI World</span>
+                </h1>
+                <p class="hero-subtitle animate-fade-in">
+                    Entdecke die Zukunft der Künstlichen Intelligenz. Vergleiche Modelle, erkunde Anwendungen und bleibe auf dem neuesten Stand der Technologie.
+                </p>
+                <div class="hero-buttons animate-fade-in">
+                    <button class="btn btn--primary hero-btn" onclick="scrollToSection('comparison')">
+                        <i class="fas fa-chart-line"></i> KI-Modelle vergleichen
+                    </button>
+                    <button class="btn btn--outline hero-btn" onclick="scrollToSection('applications')">
+                        <i class="fas fa-rocket"></i> Anwendungen entdecken
+                    </button>
+                </div>
+            </div>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="207">0</div>
+                    <div class="stat-label">Milliarden USD Marktgröße</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-label">Millionen aktive Nutzer</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="15000">0</div>
+                    <div class="stat-label">+ KI-Unternehmen</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="50000">0</div>
+                    <div class="stat-label">+ Forschungsarbeiten/Jahr</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Was ist KI Section -->
+        <section class="ai-intro">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Was ist Künstliche Intelligenz?</h2>
+                    <p>KI ist die Simulation menschlicher Intelligenz in Maschinen, die programmiert sind, um wie Menschen zu denken und zu lernen.</p>
+                </div>
+                <div class="ai-features">
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Machine Learning</h3>
+                        <p>Algorithmen lernen aus Daten und verbessern sich kontinuierlich ohne explizite Programmierung.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Computer Vision</h3>
+                        <p>Maschinen können Bilder und Videos verstehen, analysieren und interpretieren.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Natural Language Processing</h3>
+                        <p>KI versteht und generiert menschliche Sprache in natürlicher Form.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KI-Vergleich Section -->
+        <section id="comparison" class="comparison-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>KI-Modelle im Vergleich</h2>
+                    <p>Die führenden KI-Systeme im direkten Vergleich</p>
+                </div>
+                
+                <div class="comparison-filters">
+                    <button class="filter-btn active" data-filter="all">Alle</button>
+                    <button class="filter-btn" data-filter="performance">Performance</button>
+                    <button class="filter-btn" data-filter="cost">Kosten</button>
+                    <button class="filter-btn" data-filter="features">Features</button>
+                </div>
+
+                <div class="comparison-grid" id="comparisonGrid">
+                    <!-- GPT-5 Card -->
+                    <div class="model-card glass-card" data-category="performance cost features">
+                        <div class="model-header">
+                            <div class="model-logo">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="model-info">
+                                <h3>GPT-5</h3>
+                                <span class="company">OpenAI</span>
+                                <span class="release-date">August 2025</span>
+                            </div>
+                        </div>
+                        <div class="model-content">
+                            <p class="model-description">GPT-5 vereint alle Modelle in einem System mit intelligentem Routing</p>
+                            <div class="model-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Context Window:</span>
+                                    <span class="spec-value">400k tokens</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">SWE-Benchmark:</span>
+                                    <span class="spec-value">74.9%</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Kosten:</span>
+                                    <span class="spec-value">Höher</span>
+                                </div>
+                            </div>
+                            <div class="model-strengths">
+                                <h4>Stärken:</h4>
+                                <div class="strength-tags">
+                                    <span class="tag">Universalität</span>
+                                    <span class="tag">Reasoning</span>
+                                    <span class="tag">Coding</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn--outline model-btn" onclick="showModelDetails('gpt5')">Details anzeigen</button>
+                    </div>
+
+                    <!-- Claude 3.5 Card -->
+                    <div class="model-card glass-card" data-category="performance features">
+                        <div class="model-header">
+                            <div class="model-logo">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="model-info">
+                                <h3>Claude 3.5 Sonnet</h3>
+                                <span class="company">Anthropic</span>
+                                <span class="release-date">Juni 2024</span>
+                            </div>
+                        </div>
+                        <div class="model-content">
+                            <p class="model-description">Zeichnet sich durch Sicherheit und Präzision aus</p>
+                            <div class="model-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Context Window:</span>
+                                    <span class="spec-value">200k tokens</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">SWE-Benchmark:</span>
+                                    <span class="spec-value">64%</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Kosten:</span>
+                                    <span class="spec-value">3$ pro Million Tokens</span>
+                                </div>
+                            </div>
+                            <div class="model-strengths">
+                                <h4>Stärken:</h4>
+                                <div class="strength-tags">
+                                    <span class="tag">Ethische KI</span>
+                                    <span class="tag">Coding</span>
+                                    <span class="tag">Sicherheit</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn--outline model-btn" onclick="showModelDetails('claude')">Details anzeigen</button>
+                    </div>
+
+                    <!-- Gemini 2.0 Card -->
+                    <div class="model-card glass-card" data-category="cost features">
+                        <div class="model-header">
+                            <div class="model-logo">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="model-info">
+                                <h3>Gemini 2.0</h3>
+                                <span class="company">Google</span>
+                                <span class="release-date">Dezember 2024</span>
+                            </div>
+                        </div>
+                        <div class="model-content">
+                            <p class="model-description">Agentische KI mit nativer Tool-Nutzung</p>
+                            <div class="model-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Context Window:</span>
+                                    <span class="spec-value">2M tokens (Pro)</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Varianten:</span>
+                                    <span class="spec-value">Flash, Pro, Flash-Lite</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Kosten:</span>
+                                    <span class="spec-value">Kosteneffizient</span>
+                                </div>
+                            </div>
+                            <div class="model-strengths">
+                                <h4>Stärken:</h4>
+                                <div class="strength-tags">
+                                    <span class="tag">Multimodalität</span>
+                                    <span class="tag">Speed</span>
+                                    <span class="tag">Integration</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn--outline model-btn" onclick="showModelDetails('gemini')">Details anzeigen</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Anwendungen Section -->
+        <section id="applications" class="applications-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>KI-Anwendungen nach Branchen</h2>
+                    <p>Entdecke wie KI verschiedene Industrien revolutioniert</p>
+                </div>
+                
+                <div class="applications-grid">
+                    <div class="application-card" data-sector="medizin">
+                        <div class="app-header">
+                            <div class="app-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h3>Medizin</h3>
+                        </div>
+                        <div class="app-content">
+                            <p>Bessere Diagnosegenauigkeit und schnellere Behandlungen</p>
+                            <ul class="app-examples">
+                                <li>Diagnose von Krebs und Alzheimer</li>
+                                <li>KI-gestützte Arzneimittelentwicklung</li>
+                                <li>Personalisierte Therapieempfehlungen</li>
+                                <li>Automatisierte Pathologie-Auswertungen</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn--secondary" onclick="showApplicationDetails('medizin')">Mehr erfahren</button>
+                    </div>
+
+                    <div class="application-card" data-sector="bildung">
+                        <div class="app-header">
+                            <div class="app-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>Bildung</h3>
+                        </div>
+                        <div class="app-content">
+                            <p>Individualisierte Bildung für jeden Lerntyp</p>
+                            <ul class="app-examples">
+                                <li>Personalisierte Lernpläne</li>
+                                <li>Intelligente Tutorsysteme</li>
+                                <li>Automatische Bewertung</li>
+                                <li>Sprachlernsysteme</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn--secondary" onclick="showApplicationDetails('bildung')">Mehr erfahren</button>
+                    </div>
+
+                    <div class="application-card" data-sector="industrie">
+                        <div class="app-header">
+                            <div class="app-icon">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <h3>Industrie</h3>
+                        </div>
+                        <div class="app-content">
+                            <p>Effizienzsteigerung und Kostenreduktion</p>
+                            <ul class="app-examples">
+                                <li>Predictive Maintenance</li>
+                                <li>Qualitätskontrolle</li>
+                                <li>Supply Chain Optimierung</li>
+                                <li>Autonome Roboter</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn--secondary" onclick="showApplicationDetails('industrie')">Mehr erfahren</button>
+                    </div>
+
+                    <div class="application-card" data-sector="finanzen">
+                        <div class="app-header">
+                            <div class="app-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Finanzen</h3>
+                        </div>
+                        <div class="app-content">
+                            <p>Sicherere und schnellere Finanzdienstleistungen</p>
+                            <ul class="app-examples">
+                                <li>Fraud Detection</li>
+                                <li>Algorithmic Trading</li>
+                                <li>Kreditbewertung</li>
+                                <li>Kundenservice Chatbots</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn--secondary" onclick="showApplicationDetails('finanzen')">Mehr erfahren</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="news-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Aktuelle KI-News</h2>
+                    <p>Bleibe auf dem Laufenden über die neuesten Entwicklungen</p>
+                </div>
+
+                <div class="news-filters">
+                    <button class="filter-btn active" data-category="all">Alle</button>
+                    <button class="filter-btn" data-category="Produktlaunch">Produktlaunch</button>
+                    <button class="filter-btn" data-category="Update">Updates</button>
+                    <button class="filter-btn" data-category="Regulation">Regulation</button>
+                </div>
+
+                <div class="news-grid" id="newsGrid">
+                    <article class="news-card glass-card" data-category="Produktlaunch">
+                        <div class="news-header">
+                            <span class="news-category">Produktlaunch</span>
+                            <span class="news-date">06.08.2025</span>
+                        </div>
+                        <h3>OpenAI veröffentlicht GPT-5 mit revolutionären Features</h3>
+                        <p>GPT-5 erreicht 74,9% auf SWE-bench und reduziert Halluzinationen drastisch</p>
+                        <a href="#" class="news-link">Weiterlesen <i class="fas fa-arrow-right"></i></a>
+                    </article>
+
+                    <article class="news-card glass-card" data-category="Produktlaunch">
+                        <div class="news-header">
+                            <span class="news-category">Produktlaunch</span>
+                            <span class="news-date">10.12.2024</span>
+                        </div>
+                        <h3>Google stellt Gemini 2.0 mit agentischen Fähigkeiten vor</h3>
+                        <p>Gemini 2.0 kann Tools nutzen und komplexe Aufgaben autonom ausführen</p>
+                        <a href="#" class="news-link">Weiterlesen <i class="fas fa-arrow-right"></i></a>
+                    </article>
+
+                    <article class="news-card glass-card" data-category="Update">
+                        <div class="news-header">
+                            <span class="news-category">Update</span>
+                            <span class="news-date">22.10.2024</span>
+                        </div>
+                        <h3>Claude 3.5 kann jetzt Computer steuern</h3>
+                        <p>Anthropic's neues Update ermöglicht Computersteuerung via Screenshots</p>
+                        <a href="#" class="news-link">Weiterlesen <i class="fas fa-arrow-right"></i></a>
+                    </article>
+
+                    <article class="news-card glass-card" data-category="Regulation">
+                        <div class="news-header">
+                            <span class="news-category">Regulation</span>
+                            <span class="news-date">01.02.2025</span>
+                        </div>
+                        <h3>EU KI-Gesetz tritt in Kraft</h3>
+                        <p>Neue Transparenzanforderungen für KI-Anbieter in Europa</p>
+                        <a href="#" class="news-link">Weiterlesen <i class="fas fa-arrow-right"></i></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trends Section -->
+        <section id="trends" class="trends-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>KI-Trends 2025</h2>
+                    <p>Die wichtigsten Entwicklungen, die die Zukunft prägen werden</p>
+                </div>
+
+                <div class="trends-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Q2 2025</div>
+                            <h3>AGI Entwicklung</h3>
+                            <p>Erste Fortschritte bei Artificial General Intelligence</p>
+                            <div class="impact-badge">Fundamentale Veränderung der KI-Landschaft</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025</div>
+                            <h3>KI-Agenten</h3>
+                            <p>Autonome KI-Systeme die komplexe Aufgaben selbständig erledigen</p>
+                            <div class="impact-badge">Revolution in der Automatisierung</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Bereits verfügbar</div>
+                            <h3>Multimodale KI</h3>
+                            <p>KI verarbeitet Text, Bild, Audio und Video gleichzeitig</p>
+                            <div class="impact-badge">Natürlichere Mensch-Computer-Interaktion</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025-2026</div>
+                            <h3>Edge AI</h3>
+                            <p>KI läuft direkt auf Geräten ohne Cloud</p>
+                            <div class="impact-badge">Bessere Privatsphäre und geringere Latenz</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Über uns Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Über AI World</h2>
+                    <p>Wir machen KI-Wissen für jeden zugänglich</p>
+                </div>
+
+                <div class="about-content">
+                    <div class="mission-card glass-card">
+                        <h3>Unsere Mission</h3>
+                        <p>AI World ist die führende Plattform für KI-Wissen im deutschsprachigen Raum. Wir bieten umfassende Informationen, aktuelle News und detaillierte Vergleiche der neuesten KI-Technologien. Unser Ziel ist es, komplexe KI-Themen verständlich und zugänglich zu machen.</p>
+                    </div>
+
+                    <div class="team-section">
+                        <h3>Unser Team</h3>
+                        <div class="team-grid">
+                            <div class="team-member">
+                                <div class="member-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <h4>Dr. Sarah Mueller</h4>
+                                <p>KI-Forscherin & Gründerin</p>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <h4>Prof. Michael Schmidt</h4>
+                                <p>Machine Learning Experte</p>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <h4>Lisa Chen</h4>
+                                <p>KI-Journalistin</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-section">
+                        <h3>Kontakt</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@aiworld.de</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+49 30 12345678</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Berlin, Deutschland</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>AI World</h4>
+                    <p>Die führende Plattform für KI-Wissen und -Trends</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#comparison">KI-Vergleich</a></li>
+                        <li><a href="#applications">Anwendungen</a></li>
+                        <li><a href="#news">News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="#">Datenschutz</a></li>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">AGB</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Folgen Sie uns</h4>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI World. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal für Model Details -->
+    <div class="modal hidden" id="modelModal">
+        <div class="modal-overlay" onclick="closeModal('modelModal')"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Model Details</h3>
+                <button class="modal-close" onclick="closeModal('modelModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content wird dynamisch geladen -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal für Application Details -->
+    <div class="modal hidden" id="applicationModal">
+        <div class="modal-overlay" onclick="closeModal('applicationModal')"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="appModalTitle">Application Details</h3>
+                <button class="modal-close" onclick="closeModal('applicationModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="appModalBody">
+                <!-- Content wird dynamisch geladen -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
